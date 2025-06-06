@@ -1,0 +1,26 @@
+name: laravel-starter
+type: laravel
+docroot: public
+php_version: "8.3"
+webserver_type: nginx-fpm
+database:
+  type: mysql
+  version: 8
+router_http_port: "80"
+router_https_port: "443"
+xdebug_enabled: true
+
+# Optional: if you use queues or other background workers
+web_environment:
+  - APP_ENV=local
+  - APP_DEBUG=true
+  - XDEBUG_MODE=debug,develop
+  - XDEBUG_CLIENT_HOST=host.docker.internal
+  - XDEBUG_CLIENT_PORT=9003
+
+use_dns_when_possible: true
+timezone: America/New_York
+
+# Automatically start Mailhog
+additional_services:
+  - mailhog
